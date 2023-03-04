@@ -1,20 +1,20 @@
 import ReactDOM from 'react-dom/client';
 import 'semantic-ui-css/semantic.min.css';
-import App from './app/layout/App';
-import reportWebVitals from './reportWebVitals';
 import 'react-calendar/dist/Calendar.css'
+import 'react-toastify/dist/ReactToastify.min.css'
 import './app/layout/styles.css';
+import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/store/store';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './app/router/Router';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <StoreContext.Provider value={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </StoreContext.Provider>
 );
 
