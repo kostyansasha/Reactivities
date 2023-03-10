@@ -41,8 +41,6 @@ namespace Application.Activities
 
                 _mapper.Map(request.Activity, activity);
 
-                await _context.SaveChangesAsync();
-
                 var result = await _context.SaveChangesAsync() > 0;
 
                 if (!result) return Result<Unit>.Failure("Failed to update activity");
