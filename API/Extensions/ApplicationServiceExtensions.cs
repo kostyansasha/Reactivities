@@ -1,6 +1,8 @@
 ﻿using Application.Activities;
+using Application.Interfaces;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Infrastructure.Security;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -31,10 +33,11 @@ namespace API.Extensions
 
             services.AddMediatR(typeof(Application.Activities.List.Handler).Assembly);
             services.AddAutoMapper(typeof(Application.Core.MappingProfiles).Assembly);
-            
+
             services.AddFluentValidationAutoValidation();
             //services.AddFluentValidationClientsideAdapters();
-            services.AddValidatorsFromAssemblyContaining<Create>(); 
+            services.AddValidatorsFromAssemblyContaining<Create>();
+            services.AddScoped<IUserAccessor, UserAccessor>();
 
             return services;
         }
