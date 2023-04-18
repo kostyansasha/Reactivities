@@ -40,7 +40,7 @@ axios.interceptors.response.use(async response => {
                 const modalStateErrors = [];
                 for (const key in data.errors) {
                     if (data.errors[key]) {
-                        modalStateErrors.push(data.errors[key])
+                        modalStateErrors.push(data.errors[key]);
                     }
                 }
 
@@ -97,7 +97,8 @@ const Profiles = {
         })
     },
     setMainPhoto: (id: string) => request.post(`/photos/${id}/setmain`, {}),
-    deletePhoto: (id: string) => request.delete(`/photos/${id}`)
+    deletePhoto: (id: string) => request.delete(`/photos/${id}`),
+    update: (profile: Partial<Profile>) => request.put('/profiles', profile)
 }
 
 const agent = {
