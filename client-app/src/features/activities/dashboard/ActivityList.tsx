@@ -11,7 +11,7 @@ export default observer(function ActivityList() {
     return (
         <>
             {groupedActivities.map(([group, activities]) => (
-                < Fragment key={group} >
+                <Fragment key={group} >
                     <Header sub color='teal'>
                         {group}
                     </Header>
