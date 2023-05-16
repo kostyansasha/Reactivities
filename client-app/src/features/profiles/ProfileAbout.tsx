@@ -1,4 +1,4 @@
-import { Button, Grid, Header, Label, Segment, Tab } from "semantic-ui-react";
+import { Button, Grid, Header, Tab } from "semantic-ui-react";
 import { useStore } from "../../app/store/store";
 import { useState } from "react";
 import { observer } from "mobx-react-lite";

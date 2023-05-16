@@ -1,9 +1,8 @@
-import { Button, Grid, Loader } from "semantic-ui-react";
+import { Grid, Loader } from "semantic-ui-react";
 import ActivityList from "./ActivityList";
 import { useStore } from "../../../app/store/store";
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
-import LoadingComponent from "../../../app/layout/loadingComponent";
 import ActivityFilters from "./ActivityFilters";
 import { PagingParams } from "../../../app/models/pagination";
 import ActivityListItemPlaceholder from "./ActivityListItemPlaceholder";

@@ -45,6 +45,9 @@ namespace API
 
             app.UseRouting();
 
+            app.UseDefaultFiles(); // for wwwroot folder
+            app.UseStaticFiles();  // for wwwroot folder
+
             app.UseCors("CorsPolicy");
 
             app.UseAuthentication(); // Order is important
@@ -54,6 +57,7 @@ namespace API
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chat");
+                endpoints.MapFallbackToController("Index", "Fallback"); // to the wwwroot
             });
         }
     }

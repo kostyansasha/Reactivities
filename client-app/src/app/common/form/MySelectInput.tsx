@@ -1,5 +1,5 @@
 import { useField } from "formik";
-import { Form, Label, Placeholder, Select } from "semantic-ui-react";
+import { Form, Label, Select } from "semantic-ui-react";
 
 interface Props {
     placeholder: string;

@@ -38,7 +38,7 @@ export default class ProfileStore {
 
     get isCurrentUser() {
         if (store.userStore.user && this.profile) {
-            return store.userStore.user.username == this.profile.username;
+            return store.userStore.user.username === this.profile.username;
         }
 
         return false;
@@ -86,7 +86,7 @@ export default class ProfileStore {
             runInAction(() => {
                 if (this.profile && this.profile.photos) {
                     this.profile.photos.find(p => p.isMain)!.isMain = false;
-                    this.profile.photos.find(p => p.id == photo.id)!.isMain = true;
+                    this.profile.photos.find(p => p.id === photo.id)!.isMain = true;
                     this.profile.image = photo.url;
                     this.loading = false;
                 }
@@ -118,7 +118,7 @@ export default class ProfileStore {
         try {
             await agent.Profiles.update(profile);
             runInAction(() => {
-                if (profile.displayName && profile.displayName != store.userStore.user?.displayName) {
+                if (profile.displayName && profile.displayName !== store.userStore.user?.displayName) {
                     store.userStore.setDisplayName(profile.displayName);
                 }
 

@@ -45,7 +45,7 @@ namespace Application.Profiles
 
                 if (request.Predicate == "past")
                 {
-                    query = query.Where(x => x.Date < DateTime.Now);
+                    query = query.Where(x => x.Date < DateTime.UtcNow);
                 }
                 else if (request.Predicate == "hosting")
                 {
@@ -53,7 +53,7 @@ namespace Application.Profiles
                 }
                 else if (request.Predicate == "future")
                 {
-                    query = query.Where(x => x.Date >= DateTime.Now);
+                    query = query.Where(x => x.Date >= DateTime.UtcNow);
                 }
 
                 return Result<List<UserActivityDto>>.Success(await query.ToListAsync());
