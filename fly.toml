@@ -13,6 +13,7 @@ primary_region = "waw"
   ASPNETCORE_URLS = "http://+:8080"
   Cloudinary__ApiKey = "162728268535247"
   Cloudinary__CloudName = "dqfdtif0q"
+  Facebook__AppId ="782274383401233"
 
 [http_service]
   internal_port = 8080

@@ -46,8 +46,8 @@ namespace API
                 .FormActions(s => s.Self())
                 .FormActions(s => s.Self())
                 .FrameAncestors(s => s.Self())
-                .ImageSources(s => s.Self().CustomSources("blob:", "https://res.cloudinary.com"))
-                .ScriptSources(s => s.Self())
+                .ImageSources(s => s.Self().CustomSources("blob:", "https://res.cloudinary.com", "https://platform-lookaside.fbsbx.com"))
+                .ScriptSources(s => s.Self().CustomSources("https://connect.facebook.net"))
             );
 
 
