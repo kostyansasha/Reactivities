@@ -33,7 +33,9 @@ namespace API.Extensions
                         ValidateIssuerSigningKey = true, //it is a validating for our "super secret key"
                         IssuerSigningKey = key,
                         ValidateIssuer = false,
-                        ValidateAudience = false
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero
                     };
 
                     opt.Events = new JwtBearerEvents
