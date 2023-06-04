@@ -65,8 +65,8 @@ namespace API.Extensions
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()
-                        .WithExposedHeaders("WWW-Authenticate", "Pagination")
-                        .WithOrigins("http://localhost:3000", "https://localhost:3000");
+                        .WithExposedHeaders("Pagination", "WWW-Authenticate")
+                        .WithOrigins("http://localhost:3000", "https://localhost:3000", "https://localhost:5000", "http://localhost:5000");
                 });
             });
 
@@ -76,6 +76,7 @@ namespace API.Extensions
             services.AddFluentValidationAutoValidation();
             //services.AddFluentValidationClientsideAdapters();
             services.AddValidatorsFromAssemblyContaining<Create>();
+            services.AddHttpContextAccessor();
             services.AddScoped<IUserAccessor, UserAccessor>();
             services.AddScoped<IPhotoAccessor, PhotoAccessor>();
             services.Configure<CloudinarySettings>(config.GetSection("Cloudinary"));
