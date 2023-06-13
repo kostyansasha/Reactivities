@@ -14,6 +14,7 @@ primary_region = "waw"
   Cloudinary__ApiKey = "162728268535247"
   Cloudinary__CloudName = "dqfdtif0q"
   Facebook__AppId ="782274383401233"
+  Sendgrid__User='reactivities'
 
 [http_service]
   internal_port = 8080

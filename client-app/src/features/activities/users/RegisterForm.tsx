@@ -6,7 +6,7 @@ import { useStore } from "../../../app/store/store"
 import * as Yup from 'yup';
 import ValidationErrors from "../../errors/ValidationErrors"
 
-export default observer(function LoginForm() {
+export default observer(function RegisterForm() {
     const { userStore } = useStore();
 
     return (
